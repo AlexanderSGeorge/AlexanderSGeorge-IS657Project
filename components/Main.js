@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Text} from 'react-native'
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs' 
-//import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs'
+import { createBottomTabNavigator } from '@react-navigation/material-bottom-tabs' 
+import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 
 import firebase from 'firebase'
@@ -14,8 +14,8 @@ import AddScreen from './main/Add'
 import ProfileScreen from './main/Profile'
 //import SearchScreen from './main/Search'
 
-//const Tab = createMaterialBottomTabNavigator();
-const Tab = createBottomTabNavigator();
+const Tab = createMaterialBottomTabNavigator();
+//const Tab = createBottomTabNavigator();
 const EmptyScreen = () => {
     return(null)
 }
