@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, TouchableOpacity, Text, View, Button, Image } from 'react-native';
+import { StyleSheet, Text, View, Button, Image } from 'react-native';
 import { Camera } from 'expo-camera';
 import * as ImagePicker from 'expo-image-picker';
 
@@ -10,6 +10,7 @@ export default function Add({ navigation }) {
   const [camera, setCamera] = useState(null);
   const [image, setImage] = useState(null);
   const [type, setType] = useState(Camera.Constants.Type.back);
+
   useEffect(() => {
     (async () => {
       const cameraStatus = await Camera.requestPermissionsAsync();
@@ -28,8 +29,6 @@ export default function Add({ navigation }) {
       setImage(data.uri);
     }
   }
-
-  
 
   const pickImage = async () => {
     let result = await ImagePicker.launchImageLibraryAsync({
