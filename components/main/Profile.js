@@ -46,13 +46,15 @@ function Profile(props) {
                 })
         }
 
-        // if (props.following.indexOf(props.route.params.uid) > -1) {
-        //     setFollowing(true);
-        // } else {
-        //     setFollowing(false);
-        // }
+       
+        if (props.following.indexOf(props.route.params.uid) > -1) {
+            setFollowing(true);
+        } else {
+            setFollowing(false);
+        }
 
     }, [props.route.params.uid, props.following])
+
 
     const onFollow = () => {
         firebase.firestore()
