@@ -13,7 +13,6 @@ import FeedScreen from './main/Feed'
 import AddScreen from './main/Add'
 import ProfileScreen from './main/Profile'
 import SearchScreen from './main/Search'
-
 const Tab = createMaterialBottomTabNavigator();
 
 const EmptyScreen = () => {
@@ -22,7 +21,7 @@ const EmptyScreen = () => {
 
 export class Main extends Component {
     componentDidMount() {
-        //this.props.clearData();
+        this.props.clearData();
         this.props.fetchUser();
         this.props.fetchUserPosts();
         this.props.fetchUserFollowing();

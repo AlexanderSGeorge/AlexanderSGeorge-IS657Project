@@ -1,6 +1,7 @@
-
+  
 import React, { useState, useEffect } from 'react'
 import { StyleSheet, View, Text, Image, FlatList, Button } from 'react-native'
+
 import firebase from 'firebase'
 require('firebase/firestore')
 import { connect } from 'react-redux'
@@ -46,7 +47,6 @@ function Profile(props) {
                 })
         }
 
-       
         if (props.following.indexOf(props.route.params.uid) > -1) {
             setFollowing(true);
         } else {
@@ -54,7 +54,6 @@ function Profile(props) {
         }
 
     }, [props.route.params.uid, props.following])
-
 
     const onFollow = () => {
         firebase.firestore()
@@ -83,10 +82,11 @@ function Profile(props) {
     return (
         <View style={styles.container}>
             <View style={styles.containerInfo}>
-                <Text>{user.name}</Text>
-                <Text>{user.email}</Text>
+            <Text>User Name: {user.name}</Text>
+            <Text>User Email: {user.email}</Text>
+            
 
-                {props.route.params.uid !== firebase.auth().currentUser.uid ? (
+            {props.route.params.uid !== firebase.auth().currentUser.uid ? (
                     <View>
                         {following ? (
                             <Button
@@ -107,8 +107,10 @@ function Profile(props) {
                         onPress={() => onLogout()}
                     />}
             </View>
+            
 
-            <View style={styles.containerGallery}>
+            <View style={styles.containerGallery} >
+
                 <FlatList
                     numColumns={3}
                     horizontal={false}
